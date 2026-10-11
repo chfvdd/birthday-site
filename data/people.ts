@@ -1,7 +1,7 @@
 export const people = [
   {
     id: "01",
-    name: "Марго",
+    name: "ТЫ!!!!",
     video: "/videos/01.mp4",
   },
   {
