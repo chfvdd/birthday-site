@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { people } from "@/data/people";
 
 export default function Home() {
   return (
@@ -60,6 +62,26 @@ export default function Home() {
         <h2>
           ТЫ ОСОБЕННАЯ <span>♡</span>
         </h2>
+      </section>
+
+      <section className="names" id="names">
+        <span className="names__small">выбери, кого открыть ♡</span>
+
+        <h2 className="names__title">Тебя поздравляют</h2>
+
+        <ul className="names__grid">
+          {people.map((person) => (
+            <li key={person.id}>
+              <Link href={`/${person.id}`} className="nameCard">
+                <span className="nameCard__num">{person.id}</span>
+                <span className="nameCard__name">{person.name}</span>
+                <span className="nameCard__action">
+                  {person.type === "audio" ? "♪ слушать" : "▶ смотреть"}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
     </main>

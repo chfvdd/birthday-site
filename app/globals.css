@@ -484,3 +484,182 @@ body {
 }
 
 }
+/* ===================================================== */
+/* ================== NAMES SELECTOR =================== */
+/* ===================================================== */
+
+.names {
+  background: #4c1322;
+
+  padding: 100px 8% 120px;
+
+  text-align: center;
+}
+
+.names__small {
+  display: block;
+
+  color: #f6ebe3;
+
+  font-family: var(--font-script);
+
+  font-size: 26px;
+
+  margin-bottom: 12px;
+}
+
+.names__title {
+  color: #fff;
+
+  font-family: var(--font-title);
+
+  font-size: clamp(40px, 5vw, 72px);
+
+  font-weight: 500;
+
+  margin-bottom: 60px;
+}
+
+.names__grid {
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.names__grid li {
+  flex: 0 1 220px;
+}
+
+.nameCard {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 28px 20px 24px;
+
+  background: #f7efe8;
+
+  border-radius: 4px;
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.25);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.names__grid li:nth-child(odd) .nameCard  { transform: rotate(-1.5deg); }
+.names__grid li:nth-child(even) .nameCard { transform: rotate(1.5deg); }
+
+.names__grid li .nameCard:hover,
+.names__grid li .nameCard:focus-visible {
+  transform: rotate(0) translateY(-6px);
+
+  box-shadow: 0 22px 50px rgba(0,0,0,.35);
+
+  outline: none;
+}
+
+.nameCard__num {
+  font-family: var(--font-title);
+
+  font-size: 18px;
+
+  letter-spacing: .15em;
+
+  color: #a0707d;
+}
+
+.nameCard__name {
+  font-family: var(--font-title);
+
+  font-size: 30px;
+
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  color: #4c1322;
+}
+
+.nameCard__action {
+  margin-top: 6px;
+
+  font-size: 14px;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  color: #7a2d42;
+}
+
+.backLink {
+  align-self: flex-start;
+
+  margin-bottom: 30px;
+
+  font-size: 16px;
+
+  letter-spacing: .05em;
+
+  color: #7a2d42;
+
+  border-bottom: 1px solid rgba(122,45,66,.35);
+
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.backLink:hover {
+  color: #4c1322;
+  border-color: #4c1322;
+}
+
+@media (max-width: 768px) {
+
+  .names {
+    padding: 60px 20px 80px;
+  }
+
+  .names__small {
+    font-size: 20px;
+  }
+
+  .names__title {
+    margin-bottom: 36px;
+  }
+
+  .names__grid {
+    gap: 14px;
+  }
+
+  .names__grid li {
+    flex: 0 1 calc(50% - 7px);
+  }
+
+  .nameCard {
+    padding: 20px 10px 18px;
+  }
+
+  .nameCard__name {
+    font-size: 22px;
+  }
+
+  .nameCard__action {
+    font-size: 12px;
+  }
+
+  .backLink {
+    align-self: center;
+    margin-bottom: 20px;
+  }
+
+}

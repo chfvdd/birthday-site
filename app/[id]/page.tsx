@@ -1,5 +1,6 @@
 import { people } from "@/data/people";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{
@@ -18,6 +19,10 @@ export default async function PersonPage({ params }: Props) {
 
   return (
     <main className="personPage">
+      <Link href="/#names" className="backLink">
+        ← ко всем поздравлениям
+      </Link>
+
       <h1 className="personTitle">
         {person.id} / {person.name}
         <span className="titleHeart"> ♡</span>
@@ -29,7 +34,7 @@ export default async function PersonPage({ params }: Props) {
           Ваш браузер не поддерживает аудио.
         </audio>
       ) : (
-        <video controls className="personVideo">
+        <video controls playsInline preload="metadata" className="personVideo">
           <source src={person.video} type="video/mp4" />
           Ваш браузер не поддерживает видео.
         </video>
